@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="preconnect" href="#https://fonts.googleapis.com">
+    <link rel="preconnect" href="#https://fonts.gstatic.com" crossorigin>
+    <link href="#https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/graffiti-font" rel="stylesheet">
+    <style>
+        @import url('http://fonts.cdnfonts.com/css/graffiti-font');
+    </style>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'DM Sans', sans-serif;
+
+        }
+
+        body {
+            background: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+
+        #header {
+            background: url(pexels-pixabay-162379.jpg);
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #header .nav {
+            background: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+            padding: 8px;
+            margin: 0 auto;
+            align-items: center;
+            display: flex;
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        #header .nav .menu {
+            color: aliceblue;
+            margin-left: 305px;
+            width: calc(100% / 6);
+
+
+
+        }
+
+        #header .nav .logo {
+            color: #fff;
+            width: 50%;
+            display: flex;
+            align-items: center;
+
+        }
+
+        #header .nav .logo img {
+            margin-left: 10px;
+        }
+
+        #header .menu ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+        }
+
+        #header .menu ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-family: 'Graffiti font', sans-serif;
+            font-size: 10px;
+
+        }
+
+        #header .menu ul li {
+            position: relative;
+            white-space: nowrap;
+            padding: 15px 15px;
+            border-radius: 20px;
+
+
+        }
+
+        #header .menu .menu2 {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0%;
+            background: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+
+        }
+
+        #header .menu li:hover .menu2 {
+            display: block;
+            top: 100%;
+            left: 0%;
+            position: absolute;
+            border-radius: 20px;
+            transform: translateY(10px) scale(1.1);
+
+        }
+
+        #header .menu li:hover {
+            background: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+            transform: translateY(15px) scale(1.1);
+            transition: 1.4s;
+
+        }
+
+        #header .menu2 li {
+            border-bottom: 1px solid rgb(255, 105, 0, 1);
+            border-radius: 20px;
+
+        }
+
+        .container h1 {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            color: rgb(72, 10, 131);
+            font-family: 'Graffiti font', sans-serif;
+            font-size: 50px;
+            background: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+
+        }
+
+        .container .product_list {
+            display: flex;
+            flex-wrap: wrap;
+            width: 90%;
+            margin: 0 auto;
+
+        }
+
+        .container .product_list .product {
+            width: 25%;
+            text-align: center;
+            padding: 0 15px;
+            overflow: hidden;
+            transition: 1s;
+
+        }
+
+        .product_list .brand {
+            color: rgb(155, 81, 224);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+
+        }
+
+        .product img {
+            width: 60%;
+            transition: 1s;
+        }
+
+        .product a {
+            text-decoration: none;
+            color: rgba(6, 147, 227);
+            display: block;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .product .review .icon {
+            color: orange;
+            margin-right: 8px;
+
+        }
+
+        .product .review {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product .review .review-text {
+            color: yellowgreen;
+        }
+
+        .product .price {
+            color: palevioletred;
+        }
+
+        @media screen and (max-width:1000px) {
+            .container .product_list .product {
+                width: 50%;
+                margin-bottom: 50px;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .container .product_list .product {
+                width: 100%;
+            }
+        }
+
+        .container .product_list .product:hover {
+            transform: translateY(-20px) scale(1.2);
+        }
+
+        .container .product_list img:hover {
+            transform: translate(-10px) scale(1.2);
+        }
+
+
+
+
+        .row {
+            display: flex;
+            flex-flow: wrap;
+            justify-content: space-between;
+
+
+        }
+
+        .row .col {
+
+
+
+            width: calc(100% / 6);
+
+
+
+
+        }
+
+        .row .col:last-child {
+            width: calc(100% / 6 * 2);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .footer-links .links .links {
+            margin-bottom: 15px;
+        }
+
+        .footer-links h3 {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        @media screen and (max-width:1000px) {
+            .row .col {
+                width: 50%;
+                margin-bottom: 30px;
+            }
+
+            .row .col .footer-links {
+                text-align: center;
+
+            }
+
+            .row .col:last-child {
+                width: 100%;
+            }
+
+            .row .col .footer-links5 {
+                text-align: center;
+            }
+
+
+        }
+
+        @media screen and (max-width:600px) {
+            .row .col {
+                width: 100%;
+            }
+        }
+
+        .links a {
+            text-decoration: none;
+            position: relative;
+        }
+
+        .links a::after {
+            position: absolute;
+            background: red;
+            content: '';
+            top: 100%;
+            left: 0;
+            height: 3px;
+            transition: 0.5s;
+            width: 0%;
+
+        }
+
+        .links a:hover::after {
+            transform-origin: bottom right;
+
+            width: 100%;
+
+        }
+
+        .container1 {
+            padding: 100px 0;
+            width: 90%;
+            margin: 0 auto;
+            background: white;
+        }
+
+        ul li a {
+            color: #6F6C90;
+
+        }
+
+        .footer-links5 h3 {
+            font-size: 20px;
+            line-height: 22px;
+            margin-bottom: 40px;
+        }
+
+        .footer-links5 p {
+            color: #6F6C90;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .footer-links5 .text1 {
+            padding: 20px;
+            border-radius: 180px;
+            width: 100%;
+            margin: 24px 0 16px 0;
+            border: 1px solid #D9DBE9;
+
+        }
+
+        .footer-links5 .text2 {
+            padding: 18px 24px;
+            border-radius: 76px;
+            background: #4A3AFF;
+            color: white;
+            height: 54px;
+            width: 125px;
+            border: none;
+            transition: .4s ease;
+
+        }
+
+        .footer-links5 .text2:hover {
+            background: transparent;
+            color: #4A3AFF;
+            border: .5px solid #4A3AFF;
+
+        }
+
+        .row-copy {
+            border-top: 1px solid#EFF0F7;
+            margin-top: 100px;
+            padding-top: 38px;
+            display: flex;
+
+
+        }
+
+
+
+        .row-copy .left p {
+            color: #6F6C90;
+            font-size: 16px;
+            line-height: 20px;
+
+        }
+
+        .row-copy .right ul {
+            display: flex;
+            justify-content: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="nav">
+            <div class="logo">
+                <img src="download.png" alt="images" width="65px">
+                <img src="download (1).png" alt="images">
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="#">GRAFFITI GENERATOR <ul class="menu2">
+                                <li><a href="#">graffiti_letter a</a></li>
+                                <li><a href="#">graffiti_letter b</a></li>
+                                <li><a href="#">graffiti_letter c</a></li>
+                                <li><a href="#">graffiti_letter d</a></li>
+                                <li><a href="#">graffiti_letter e</a></li>
+                                <li><a href="#">graffiti_letter f</a></li>
+                            </ul></a></li>
+                    <li><a href="#">GRAFFITI LETTERS <ul class="menu2">
+                                <li><a href="#">graffiti_letter a</a></li>
+                                <li><a href="#">graffiti_letter b</a></li>
+                                <li><a href="#">graffiti_letter c</a></li>
+                                <li><a href="#">graffiti_letter d</a></li>
+                                <li><a href="#">graffiti_letter e</a></li>
+                                <li><a href="#">graffiti_letter f</a></li>
+                            </ul></a></li>
+                    <li><a href="#">ARTICLES <ul class="menu2">
+                                <li><a href="#">graffiti_letter a</a></li>
+                                <li><a href="#">graffiti_letter b</a></li>
+                                <li><a href="#">graffiti_letter c</a></li>
+                                <li><a href="#">graffiti_letter d</a></li>
+                                <li><a href="#">graffiti_letter e</a></li>
+                                <li><a href="#">graffiti_letter f</a></li>
+                            </ul></a></li>
+                    <li><a href="#">GRAFFITI WORDS <ul class="menu2">
+                                <li><a href="#">graffiti_letter a</a></li>
+                                <li><a href="#">graffiti_letter b</a></li>
+                                <li><a href="#">graffiti_letter c</a></li>
+                                <li><a href="#">graffiti_letter d</a></li>
+                                <li><a href="#">graffiti_letter e</a></li>
+                                <li><a href="#">graffiti_letter f</a></li>
+                            </ul></a></li>
+                    <li><a href="#">SHOP <ul class="menu2">
+                                <li><a href="#">graffiti_letter a</a></li>
+                                <li><a href="#">graffiti_letter b</a></li>
+                                <li><a href="#">graffiti_letter c</a></li>
+                                <li><a href="#">graffiti_letter d</a></li>
+                                <li><a href="#">graffiti_letter e</a></li>
+                                <li><a href="#">graffiti_letter f</a></li>
+                            </ul></a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+
+            </div>
+
+
+
+        </div>
+        <div class="container">
+            <h1>SHOP</h1>
+            <div class="product_list">
+                <div class="product">
+                    <div class="product-thumbail">
+                        <img src="mtn-94-spray-paint-p11-6314_thumb.png" alt="images">
+                    </div>
+                    <p class="brand">Spray Paint</p>
+                    <a href="#">SPRAY PAINT SECONDS</a>
+                    <p class="price">20$-55$</p>
+                    <div class="review">
+                        <div class="icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+
+                        </div>
+                        <span class="review-text">
+                            (1 review)
+
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="product">
+                    <div class="product-thumbail">
+                        <img src="mtn-water-based-spray-paint-100-p40-6372_medium.png" alt="images">
+                    </div>
+                    <p class="brand">Spray Paint</p>
+                    <a href="#">SPRAY PAINT SECONDS</a>
+                    <p class="price">20$-55$</p>
+                    <div class="review">
+                        <div class="icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+
+                        </div>
+                        <span class="review-text">
+                            (1 review)
+
+                        </span>
+                    </div>
+
+                </div>
+                <div class="product">
+                    <div class="product-thumbail">
+                        <img src="procreate-4-graffiti-alphabet-stamp-brushset-bundle-overview-1024x1024.jpg"
+                            alt="images">
+                    </div>
+                    <p class="brand">Spray Paint</p>
+                    <a href="#">SPRAY PAINT SECONDS</a>
+                    <p class="price">20$-55$</p>
+                    <div class="review">
+                        <div class="icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+
+                        </div>
+                        <span class="review-text">
+                            (1 review)
+
+                        </span>
+                    </div>
+
+                </div>
+                <div class="product">
+                    <div class="product-thumbail">
+                        <img src="spray-paint-seconds-p2322-5901_image.png" alt="images">
+                    </div>
+                    <p class="brand">Spray Paint</p>
+                    <a href="#">SPRAY PAINT SECONDS</a>
+                    <p class="price">20$-55$</p>
+                    <div class="review">
+                        <div class="icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+
+                        </div>
+                        <span class="review-text">
+                            (1 review)
+
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+            <footer>
+                <div class="container1">
+                    <div class="row">
+                        <div class="col">
+                            <div class="footer-links">
+                                <h3>Product</h3>
+                                <ul class="links">
+                                    <li class="links"><a href="#">Features</a></li>
+                                    <li class="links"><a href="#">Pricing</a></li>
+                                    <li class="links"><a href="#">Case Studies</a></li>
+                                    <li class="links"><a href="#">Reviews</a></li>
+                                    <li class="links"><a href="#">Updates</a></li>
+
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+                        <div class="col">
+                            <div class="footer-links">
+                                <h3>Company</h3>
+                                <ul class="links">
+                                    <li class="links"><a href="#">About</a></li>
+                                    <li class="links"><a href="#">Contact us</a></li>
+                                    <li class="links"><a href="#">Careers</a></li>
+                                    <li class="links"><a href="#">Culture</a></li>
+                                    <li class="links"><a href="#">Blog</a></li>
+
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+                        <div class="col">
+                            <div class="footer-links">
+                                <h3>Support</h3>
+                                <ul class="links">
+                                    <li class="links"><a href="#">Getting Started</a></li>
+                                    <li class="links"><a href="#">Help center</a></li>
+                                    <li class="links"><a href="#">Server status</a></li>
+                                    <li class="links"><a href="#">Report a bug</a></li>
+                                    <li class="links"><a href="#">Chat support</a></li>
+
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+                        <div class="col">
+                            <div class="footer-links">
+                                <h3>Downloads</h3>
+                                <ul class="links">
+                                    <li class="links"><a href="#">iOS</a></li>
+                                    <li class="links"><a href="#">Android</a></li>
+                                    <li class="links"><a href="#">Mac</a></li>
+                                    <li class="links"><a href="#">Windows</a></li>
+                                    <li class="links"><a href="#">Chrome</a></li>
+
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+                        <div class="col">
+                            <div class="footer-links5">
+                                <h3>Subcribe to our news letter</h3><br>
+                                <p>Subscribe to the latest news from us to receive the latest pictures</p><br>
+                                <input class="text1" type="Email" placeholder="Enter Your Email"><br>
+                                <input class="text2" type="submit" value="Subscribe"><br>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="row-copy">
+
+                        <div class="left">
+                            <p> Copyright © 2022 BRIX Templates | All Rights Reserved </p>
+                        </div>
+
+                        <div class="right">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+
+                            </ul>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+            </footer>
+
+        </div>
+
+
+</body>
+
+</html>
